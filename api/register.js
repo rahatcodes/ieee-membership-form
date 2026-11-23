@@ -77,7 +77,7 @@ function getRegistration(body) {
     semester: body.semester,
     ulab_mail: body.ulabMail,
     whatsapp: body.whatsapp,
-    facebook_url: body.facebook,
+    facebook_url: typeof body.facebook === "string" ? body.facebook : "",
     transaction_id: body.transactionId,
   };
 
@@ -125,13 +125,14 @@ function getRegistration(body) {
     semesters.has(values.semester) &&
     /^[^\s@]+@([a-z0-9-]+\.)*ulab\.edu\.bd$/i.test(values.ulab_mail) &&
     /^\+?\d{10,15}$/.test(normalizedWhatsapp) &&
-    /^https?:\/\/(www\.|m\.|web\.)?(facebook|fb)\.com\/.+/i.test(values.facebook_url) &&
+    (!values.facebook_url || /^https?:\/\/(www\.|m\.|web\.)?(facebook|fb)\.com\/.+/i.test(values.facebook_url)) &&
     values.transaction_id.length > 3 &&
     values.transaction_id.length <= 120;
 
   if (!valid) return null;
   values.whatsapp = normalizedWhatsapp;
   values.mobile_phone = normalizedMobilePhone;
+  values.facebook_url = values.facebook_url || null;
   values.referred_by_member = values.referred_by_member === "true";
   values.undergraduate_program_accredited = values.undergraduate_program_accredited === "Yes";
   return values;

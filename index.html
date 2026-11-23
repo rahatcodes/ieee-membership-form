@@ -144,7 +144,8 @@ input:focus,select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 
                   autocomplete="email"
                   placeholder="Email used for your IEEE account"><div
                   class="msg">Enter a valid email address.</div></div>
-              <div class="f full"><label for="mid">IEEE Login Password</label><input
+              <div class="f full"><label for="mid">IEEE Login
+                  Password</label><input
                   id="mid" type="text" autocapitalize="off" autocomplete="off"
                   placeholder="Your 5–50 character member ID"><div
                   class="msg">Enter a member ID with 5–50 non-space
@@ -305,7 +306,8 @@ input:focus,select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 
                   id="wa" type="tel" placeholder="+8801XXXXXXXXX"><div
                   class="msg">Enter a valid number with 10–15
                   digits.</div></div>
-              <div class="f"><label for="fb">Facebook profile link</label><input
+              <div class="f"><label for="fb">Facebook profile link
+                  (optional)</label><input
                   id="fb" type="url"
                   placeholder="https://www.facebook.com/ieee.ulab/"><div
                   class="msg">Paste your full Facebook profile link.</div></div>
@@ -412,7 +414,7 @@ $("f2").addEventListener("submit", e => {
     check("sem", v("sem") !== ""),
     check("mail", /^[^\s@]+@([a-z0-9-]+\.)*ulab\.edu\.bd$/i.test(v("mail"))),
     check("wa", /^\+?\d{10,15}$/.test(v("wa").replace(/[\s-]/g, ""))),
-    check("fb", /^https?:\/\/(www\.|m\.|web\.)?(facebook|fb)\.com\/.+/i.test(v("fb"))),
+    check("fb", !v("fb") || /^https?:\/\/(www\.|m\.|web\.)?(facebook|fb)\.com\/.+/i.test(v("fb"))),
     check("trx", v("trx").length > 3)
   ].every(Boolean);
   if(!ok) return;

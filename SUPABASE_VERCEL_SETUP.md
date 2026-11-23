@@ -63,8 +63,8 @@ create table if not exists public.ieee_member_registrations (
     ulab_mail ~* '^[^[:space:]@]+@([a-z0-9-]+[.])*ulab[.]edu[.]bd$'
   ),
   whatsapp text not null check (whatsapp ~ '^[+]?[0-9]{10,15}$'),
-  facebook_url text not null check (
-    facebook_url ~* '^https?://(www[.]|m[.]|web[.])?(facebook|fb)[.]com/.+'
+  facebook_url text check (
+    facebook_url is null or facebook_url ~* '^https?://(www[.]|m[.]|web[.])?(facebook|fb)[.]com/.+'
   ),
   transaction_id text not null check (char_length(transaction_id) between 4 and 120),
   created_at timestamptz not null default now()
@@ -108,13 +108,24 @@ alter table public.ieee_member_registrations
   add column if not exists graduation_date text,
   add column if not exists field_of_study text,
   add column if not exists technology_focus text,
-  add column if not exists undergraduate_program_accredited boolean;
+  add column if not exists undergraduate_program_accredited boolean,
+  add column if not exists facebook_url text;
 
 alter table public.ieee_member_registrations
   alter column student_status drop not null,
   alter column degree_sought drop not null,
   alter column academic_program drop not null,
-  alter column field_of_study drop not null;
+  alter column field_of_study drop not null,
+  alter column facebook_url drop not null;
+
+alter table public.ieee_member_registrations
+  drop constraint if exists ieee_member_registrations_facebook_url_check;
+
+alter table public.ieee_member_registrations
+  add constraint ieee_member_registrations_facebook_url_check
+  check (
+    facebook_url is null or facebook_url ~* '^https?://(www[.]|m[.]|web[.])?(facebook|fb)[.]com/.+'
+  );
 
 alter table public.ieee_member_registrations
   drop constraint if exists ieee_member_registrations_technology_focus_check;
