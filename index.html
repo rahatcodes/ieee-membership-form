@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>IEEE ULAB SB – Member registration</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚡</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>IEEE ULAB SB – Member registration</title>
+    <link rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚡</text></svg>">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet">
+    <style>
 :root{
   --blue:#00629B; --cyan:#00A9E0; --navy:#002855;
   --bg:#EEF4F9; --card:#fff; --text:#0B2239; --muted:#5B7083; --line:#D5E1EB; --field:#F6FAFD; --err:#C62828;
@@ -51,6 +55,12 @@ h1{font-size:30px;line-height:1.15;margin:0 0 8px;letter-spacing:-.02em}
 .lead{color:var(--muted);margin:0 0 28px;max-width:46ch}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
 .full{grid-column:1/-1}
+.section-title{grid-column:1/-1;font-size:18px;margin:12px 0 -4px}
+.choice-group{border:0;padding:0;margin:0;min-width:0}
+.choice-group legend{font-weight:600;font-size:14px;margin-bottom:8px}
+.choice-options{display:flex;flex-wrap:wrap;gap:10px 18px}
+.choice-options label{display:flex;align-items:center;gap:7px;font-weight:400;margin:0}
+.choice-options input{width:auto;margin:0;accent-color:var(--blue)}
 label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
 input,select{width:100%;font:inherit;color:var(--text);background:var(--field);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
 input::placeholder{color:var(--muted);opacity:.7}
@@ -101,81 +111,250 @@ input:focus,select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}.done-wrap *{opacity:1!important}}
 </style>
-</head>
-<body>
-<div class="shell">
-  <aside class="side">
-    <div class="brand">IEEE ULAB<small>Student Branch · Member registration</small></div>
-    <ol class="steps" id="steps">
-      <li class="active"><div class="dot">1</div><div><b>IEEE details</b><span>Enter your account email and member ID</span></div></li>
-      <li><div class="dot">2</div><div><b>Your details</b><span>Tell us who you are</span></div></li>
-      <li><div class="dot">3</div><div><b>Done</b><span>Wait for confirmation</span></div></li>
-    </ol>
-    <svg class="pulse" viewBox="0 0 280 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22H70l12-18 16 36 14-30 10 12H170l10-14 12 28 10-14H280"/></svg>
-  </aside>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="side">
+        <div class="brand">IEEE ULAB<small>Student Branch · Member
+            registration</small></div>
+        <ol class="steps" id="steps">
+          <li class="active"><div class="dot">1</div><div><b>IEEE
+                details</b><span>Enter your account email and member
+                ID</span></div></li>
+          <li><div class="dot">2</div><div><b>Your details</b><span>Tell us who
+                you are</span></div></li>
+          <li><div class="dot">3</div><div><b>Done</b><span>Wait for
+                confirmation</span></div></li>
+        </ol>
+        <svg class="pulse" viewBox="0 0 280 44" preserveAspectRatio="none"
+          aria-hidden="true"><path
+            d="M0 22H70l12-18 16 36 14-30 10 12H170l10-14 12 28 10-14H280" /></svg>
+      </aside>
 
-  <main>
-    <!-- Step 1 -->
-    <section class="panel show" id="p1">
-      <h1>Your IEEE membership details</h1>
-      <p class="lead">Enter your IEEE account email and member ID to continue to registration.</p>
-      <form id="f1" novalidate>
-        <div class="grid">
-          <div class="f full"><label for="accountEmail">IEEE Account email</label><input id="accountEmail" type="email" autocomplete="email" placeholder="Email used for your IEEE account"><div class="msg">Enter a valid email address.</div></div>
-          <div class="f full"><label for="mid">IEEE Login Password</label><input id="mid" autocapitalize="characters" autocomplete="off" placeholder="Letters and numbers, e.g. 98A76543"><div class="msg">Member ID can use letters and numbers only (5–15 characters).</div></div>
-        </div>
-        <button class="btn" type="submit"><span class="spin"></span><span class="t">Authenticate</span></button>
-      </form>
-    </section>
+      <main>
+        <!-- Step 1 -->
+        <section class="panel show" id="p1">
+          <h1>Your IEEE membership details</h1>
+          <p class="lead">Enter your IEEE account email and member ID to
+            continue to registration.</p>
+          <form id="f1" novalidate>
+            <div class="grid">
+              <div class="f full"><label for="accountEmail">IEEE Account
+                  email</label><input id="accountEmail" type="email"
+                  autocomplete="email"
+                  placeholder="Email used for your IEEE account"><div
+                  class="msg">Enter a valid email address.</div></div>
+              <div class="f full"><label for="mid">IEEE Member ID</label><input
+                  id="mid" type="text" autocapitalize="off" autocomplete="off"
+                  placeholder="Your 5–50 character member ID"><div
+                  class="msg">Enter a member ID with 5–50 non-space
+                  characters.</div></div>
+            </div>
+            <button class="btn" type="submit"><span class="spin"></span><span
+                class="t">Authenticate</span></button>
+          </form>
+        </section>
 
-    <!-- Step 2 -->
-    <section class="panel" id="p2">
-      <div class="ok-chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg><span id="who">Authenticated</span></div>
-      <h1>Complete your registration</h1>
-      <p class="lead">Fill in your details exactly as they appear in university records.</p>
-      <form id="f2" novalidate>
-        <div class="grid">
-          <div class="f full"><label for="fname">Full name</label><input id="fname" autocomplete="name"><div class="msg">Enter your full name.</div></div>
-          <div class="f"><label for="uid">ULAB ID</label><input id="uid" placeholder="e.g. 221014001"><div class="msg">Enter your ULAB ID.</div></div>
-          <div class="f"><label for="dept">Department</label>
-            <select id="dept"><option value="">Select department</option><option>CSE</option><option>EEE</option><option>BBA</option><option>Bangla</option><option>English</option><option>Environmental Science</option><option>International Relations</option></select><div class="msg">Choose your department.</div></div>
-          <div class="f"><label for="sem">Semester</label>
-            <select id="sem"><option value="">Select semester</option></select><div class="msg">Choose your semester.</div></div>
-          <div class="f"><label for="mail">ULAB mail</label><input id="mail" type="email" placeholder="name@ulab.edu.bd"><div class="msg">Use your @ulab.edu.bd address.</div></div>
-          <div class="f"><label for="wa">WhatsApp number</label><input id="wa" type="tel" placeholder="+8801XXXXXXXXX"><div class="msg">Enter a valid number with 10–15 digits.</div></div>
-          <div class="f"><label for="fb">Facebook profile link</label><input id="fb" type="url" placeholder="https://www.facebook.com/ieee.ulab/"><div class="msg">Paste your full Facebook profile link.</div></div>
-          <div class="f full"><label for="trx">Transaction ID</label><input id="trx" placeholder="Payment transaction ID"><div class="msg">Enter the transaction ID from your payment.</div></div>
-        </div>
-        <p class="submit-error" id="submitError" role="alert" aria-live="polite"></p>
-        <button class="btn" type="submit"><span class="spin"></span><span class="t">Submit registration</span></button>
-      </form>
-    </section>
+        <!-- Step 2 -->
+        <section class="panel" id="p2">
+          <div class="ok-chip"><svg width="16" height="16" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="3"
+              stroke-linecap="round" stroke-linejoin="round"><path
+                d="M5 12l5 5L20 7" /></svg><span
+              id="who">Authenticated</span></div>
+          <h1>Complete your registration</h1>
+          <p class="lead">Provide your contact, education, and ULAB details to
+            complete your IEEE membership registration.</p>
+          <form id="f2" novalidate>
+            <div class="grid">
+              <h2 class="section-title">Personal &amp; Contact Information</h2>
+              <div class="f"><label for="fname">First name*</label><input
+                  id="fname" autocomplete="given-name"><div class="msg">Enter
+                  your
+                  first name.</div></div>
+              <div class="f"><label for="lname">Last name*</label><input
+                  id="lname" autocomplete="family-name"><div class="msg">Enter
+                  your
+                  last name.</div></div>
+              <div class="f full"><label for="primaryEmail">Primary
+                  email*</label><input
+                  id="primaryEmail" type="email" autocomplete="email"
+                  placeholder="you@example.com"><div class="msg">Enter a valid
+                  primary email address.</div></div>
+              <div class="f"><label
+                  for="countryRegion">Country/Region*</label><input
+                  id="countryRegion" autocomplete="country-name"
+                  value="Bangladesh"><div
+                  class="msg">Enter your country or region.</div></div>
+              <fieldset class="f full choice-group" id="addressTypes">
+                <legend>Address type* (select all that apply)</legend>
+                <div class="choice-options">
+                  <label><input type="checkbox" name="addressType"
+                      value="Home">Home</label>
+                  <label><input type="checkbox" name="addressType"
+                      value="Work">Work</label>
+                  <label><input type="checkbox" name="addressType"
+                      value="University">University</label>
+                  <label><input type="checkbox" name="addressType"
+                      value="Other">Other</label>
+                </div>
+                <div class="msg">Select at least one address type.</div>
+              </fieldset>
+              <div class="f full"><label for="addressLine1">Address line
+                  1*</label><input
+                  id="addressLine1" autocomplete="address-line1"
+                  placeholder="Street address"><div
+                  class="msg">Enter your first address line.</div></div>
+              <div class="f full"><label for="addressLine2">Address line
+                  2</label><input
+                  id="addressLine2" autocomplete="address-line2"
+                  placeholder="Apartment, suite, etc. (optional)"></div>
+              <div class="f full"><label for="addressLine3">Address line
+                  3</label><input
+                  id="addressLine3"
+                  placeholder="Additional address information (optional)"></div>
+              <div class="f"><label for="city">City/Locality*</label><input
+                  id="city" autocomplete="address-level2"><div class="msg">Enter
+                  your
+                  city or locality.</div></div>
+              <div class="f"><label
+                  for="stateProvince">State/Province/Territory</label><input
+                  id="stateProvince" autocomplete="address-level1"></div>
+              <div class="f"><label for="zipPostalCode">ZIP/Postal
+                  code</label><input
+                  id="zipPostalCode" autocomplete="postal-code"></div>
+              <div class="f"><label for="mobilePhone">Mobile
+                  phone*</label><input
+                  id="mobilePhone" type="tel" autocomplete="tel"
+                  placeholder="+8801XXXXXXXXX"><div
+                  class="msg">Enter a valid phone number with country
+                  code.</div></div>
+              <div class="f full"><label for="referredByMember">Referred by an
+                  IEEE member</label>
+                <select id="referredByMember"><option
+                    value="No">No</option><option
+                    value="Yes">Yes</option></select></div>
 
-    <!-- Step 3 -->
-    <section class="panel" id="p3">
-      <div class="done-wrap">
-        <div class="seal">
-          <i></i><i></i><i></i>
-          <svg viewBox="0 0 132 132" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00629B"/><stop offset="1" stop-color="#00A9E0"/></linearGradient></defs>
-            <circle class="disc" cx="66" cy="66" r="52"/><path class="tick" d="M44 68l16 16 30-34"/></svg>
-        </div>
-        <h1>You’re registered!</h1>
-        <p>We will send you a confirmation within this week.</p>
-        <p class="s2">Stay connected with us for updates.</p>
-        <div class="contact-actions">
-          <a class="fb" id="fbLink" href="https://www.facebook.com/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.9S15.6 3.6 14.3 3.6c-2.7 0-4.4 1.6-4.4 4.5v2.4H7.1v3.3h2.8V22h3.6z"/></svg>
-            Follow IEEE ULAB SB on Facebook</a>
-          <a class="wa-contact" href="https://wa.me/8801616023909?text=Hello%2C%20I%20have%20a%20question%20about%20IEEE%20ULAB%20membership." target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.6 6L0 24l6.4-1.7a11.8 11.8 0 0 0 5.7 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.3-.4a9.8 9.8 0 1 1 8.5 4.7Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.4.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-1-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
-            Contact us on WhatsApp</a>
-        </div>
-      </div>
-    </section>
-  </main>
-</div>
+              <h2 class="section-title">Educational Information</h2>
+              <div class="f"><label for="schoolCountry">School
+                  country/region*</label><input
+                  id="schoolCountry" autocomplete="off" value="Bangladesh"><div
+                  class="msg">Enter your school's country or region.</div></div>
+              <div class="f"><label for="schoolCity">School city*</label><input
+                  id="schoolCity" autocomplete="off" value="Dhaka"><div
+                  class="msg">Enter your school's city.</div></div>
+              <div class="f full"><label for="schoolName">School
+                  name*</label><input
+                  id="schoolName" autocomplete="organization"><div
+                  class="msg">Enter your
+                  school name.</div></div>
+              <div class="f"><label for="graduationDate">Graduation
+                  date*</label><input
+                  id="graduationDate" type="text" inputmode="numeric"
+                  placeholder="YYYY-MM"><div class="msg">Enter your expected
+                  graduation month as YYYY-MM.</div></div>
+              <div class="f full"><label for="technologyFocus">Current
+                  Technology Focus*</label><select id="technologyFocus">
+                  <option value>Choose Current Technology Focus</option>
+                  <option>Aerospace</option>
+                  <option>Bioengineering</option>
+                  <option>Communication, Networking and Broadcasting</option>
+                  <option>Components, Circuits, Devices and Systems</option>
+                  <option>Computing and Processing (Hardware/Software)</option>
+                  <option>Engineered Materials, Dielectrics and Plasmas</option>
+                  <option>Fields, Waves and Electromagnetics</option>
+                  <option>General Topics for Engineers (Math, Science and
+                    Engineering)</option>
+                  <option>Geoscience</option>
+                  <option>Nuclear Engineering</option>
+                  <option>Photonics and Electro-Optics</option>
+                  <option>Power, Energy and Industry Applications</option>
+                  <option>Robotics and Control Systems</option>
+                  <option>Signal Processing and Analysis</option>
+                  <option>Transportation</option>
+                  <option>Engineering Profession</option>
+                  <option>Other</option>
+                </select><div class="msg">Choose a current technology
+                  focus.</div></div>
+              <div class="f full"><label for="undergradAccredited">Undergraduate
+                  program accredited?*</label><select
+                  id="undergradAccredited"><option value>Choose Yes or
+                    No</option><option value="Yes">Yes</option><option
+                    value="No">No</option></select><div
+                  class="msg">Choose whether your undergraduate program is
+                  accredited.</div></div>
 
-<script>
+              <h2 class="section-title">ULAB Information</h2>
+              <div class="f"><label for="uid">ULAB ID</label><input id="uid"
+                  placeholder="e.g. 221014001"><div class="msg">Enter your ULAB
+                  ID.</div></div>
+              <div class="f"><label for="dept">Department</label>
+                <select id="dept"><option value>Select
+                    department</option><option>CSE</option><option>EEE</option><option>BBA</option><option>Bangla</option><option>English</option><option>Environmental
+                    Science</option><option>International
+                    Relations</option></select><div class="msg">Choose your
+                  department.</div></div>
+              <div class="f"><label for="sem">Semester</label>
+                <select id="sem"><option value>Select
+                    semester</option></select><div class="msg">Choose your
+                  semester.</div></div>
+              <div class="f"><label for="mail">ULAB mail</label><input id="mail"
+                  type="email" placeholder="name@ulab.edu.bd"><div
+                  class="msg">Use your @ulab.edu.bd address.</div></div>
+              <div class="f"><label for="wa">WhatsApp number</label><input
+                  id="wa" type="tel" placeholder="+8801XXXXXXXXX"><div
+                  class="msg">Enter a valid number with 10–15
+                  digits.</div></div>
+              <div class="f"><label for="fb">Facebook profile link</label><input
+                  id="fb" type="url"
+                  placeholder="https://www.facebook.com/ieee.ulab/"><div
+                  class="msg">Paste your full Facebook profile link.</div></div>
+              <div class="f full"><label for="trx">Transaction ID</label><input
+                  id="trx" placeholder="Payment transaction ID"><div
+                  class="msg">Enter the transaction ID from your
+                  payment.</div></div>
+            </div>
+            <p class="submit-error" id="submitError" role="alert"
+              aria-live="polite"></p>
+            <button class="btn" type="submit"><span class="spin"></span><span
+                class="t">Submit registration</span></button>
+          </form>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="panel" id="p3">
+          <div class="done-wrap">
+            <div class="seal">
+              <i></i><i></i><i></i>
+              <svg viewBox="0 0 132 132"
+                aria-hidden="true"><defs><lineargradient id="g" x1="0" y1="0"
+                    x2="1" y2="1"><stop offset="0" stop-color="#00629B" /><stop
+                      offset="1" stop-color="#00A9E0" /></lineargradient></defs>
+                <circle class="disc" cx="66" cy="66" r="52" /><path class="tick"
+                  d="M44 68l16 16 30-34" /></svg>
+            </div>
+            <h1>You’re registered!</h1>
+            <p>We will send you a confirmation within this week.</p>
+            <p class="s2">Stay connected with us for updates.</p>
+            <div class="contact-actions">
+              <a class="fb" id="fbLink" href="https://www.facebook.com/"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path
+                    d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.9S15.6 3.6 14.3 3.6c-2.7 0-4.4 1.6-4.4 4.5v2.4H7.1v3.3h2.8V22h3.6z" /></svg>
+                Follow IEEE ULAB SB on Facebook</a>
+              <a class="wa-contact"
+                href="https://wa.me/8801616023909?text=Hello%2C%20I%20have%20a%20question%20about%20IEEE%20ULAB%20membership."
+                target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path
+                    d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.6 6L0 24l6.4-1.7a11.8 11.8 0 0 0 5.7 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.3-.4a9.8 9.8 0 1 1 8.5 4.7Zm5.4-7.3c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.4.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-1-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.1-.3-.2-.6-.3Z" /></svg>
+                Contact us on WhatsApp</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
 // ► Set your branch’s Facebook page here
 const FB_PAGE = "https://www.facebook.com/";
 document.getElementById("fbLink").href = FB_PAGE;
@@ -201,7 +380,7 @@ function busy(form, on){ const b = form.querySelector(".btn"); b.disabled = on; 
 $("f1").addEventListener("submit", e => {
   e.preventDefault();
   const accountEmail = $("accountEmail").value.trim(), m = $("mid").value.trim();
-  const ok = [check("accountEmail", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(accountEmail)), check("mid", /^[A-Za-z0-9]{5,15}$/.test(m))].every(Boolean);
+  const ok = [check("accountEmail", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(accountEmail)), check("mid", /^\S{5,50}$/.test(m))].every(Boolean);
   if(!ok) return;
   data.ieeeAccountEmail = accountEmail; data.memberId = m;
   $("who").textContent = "IEEE account email: " + accountEmail;
@@ -212,8 +391,22 @@ $("f1").addEventListener("submit", e => {
 $("f2").addEventListener("submit", e => {
   e.preventDefault();
   const v = id => $(id).value.trim();
+  const addressTypes = [...document.querySelectorAll('input[name="addressType"]:checked')].map(input => input.value);
   const ok = [
-    check("fname", v("fname").length > 1),
+    check("fname", v("fname").length > 0),
+    check("lname", v("lname").length > 0),
+    check("primaryEmail", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("primaryEmail"))),
+    check("countryRegion", v("countryRegion").length > 0),
+    check("addressTypes", addressTypes.length > 0),
+    check("addressLine1", v("addressLine1").length > 0),
+    check("city", v("city").length > 0),
+    check("mobilePhone", /^\+?\d{10,15}$/.test(v("mobilePhone").replace(/[\s()-]/g, ""))),
+    check("schoolCountry", v("schoolCountry").length > 0),
+    check("schoolCity", v("schoolCity").length > 0),
+    check("schoolName", v("schoolName").length > 0),
+    check("graduationDate", /^\d{4}-(0[1-9]|1[0-2])$/.test(v("graduationDate"))),
+    check("technologyFocus", v("technologyFocus") !== ""),
+    check("undergradAccredited", v("undergradAccredited") !== ""),
     check("uid", /^\d{6,12}$/.test(v("uid"))),
     check("dept", v("dept") !== ""),
     check("sem", v("sem") !== ""),
@@ -225,8 +418,16 @@ $("f2").addEventListener("submit", e => {
   if(!ok) return;
   busy(e.target, true);
   $("submitError").textContent = "";
-  Object.assign(data, {fullName:v("fname"), ulabId:v("uid"), department:v("dept"), semester:v("sem"),
-    ulabMail:v("mail"), whatsapp:v("wa"), facebook:v("fb"), transactionId:v("trx")});
+  Object.assign(data, {firstName:v("fname"), lastName:v("lname"), primaryEmail:v("primaryEmail"),
+    countryRegion:v("countryRegion"), addressTypes, addressLine1:v("addressLine1"),
+    addressLine2:v("addressLine2"), addressLine3:v("addressLine3"), city:v("city"),
+    stateProvince:v("stateProvince"), zipPostalCode:v("zipPostalCode"),
+    mobilePhone:v("mobilePhone").replace(/[\s()-]/g, ""), referredByMember:v("referredByMember") === "Yes",
+    schoolCountry:v("schoolCountry"), schoolCity:v("schoolCity"), schoolName:v("schoolName"),
+    graduationDate:v("graduationDate"), technologyFocus:v("technologyFocus"),
+    undergradAccredited:v("undergradAccredited"), fullName:`${v("fname")} ${v("lname")}`,
+    ulabId:v("uid"), department:v("dept"), semester:v("sem"), ulabMail:v("mail"),
+    whatsapp:v("wa"), facebook:v("fb"), transactionId:v("trx")});
   fetch("/api/register", {
     method: "POST",
     headers: {"Content-Type":"application/json"},
@@ -243,5 +444,5 @@ $("f2").addEventListener("submit", e => {
 // clear error as the user types
 document.querySelectorAll("input,select").forEach(el => el.addEventListener("input", () => el.closest(".f").classList.remove("bad")));
 </script>
-</body>
+  </body>
 </html>
