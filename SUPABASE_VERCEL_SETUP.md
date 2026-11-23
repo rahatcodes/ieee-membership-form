@@ -37,7 +37,7 @@ create table if not exists public.ieee_member_registrations (
   school_country text not null check (char_length(school_country) between 1 and 100),
   school_city text not null check (char_length(school_city) between 1 and 100),
   school_name text not null check (char_length(school_name) between 1 and 200),
-  graduation_date text not null check (graduation_date ~ '^[0-9]{4}-(0[1-9]|1[0-2])$'),
+  graduation_date text not null check (graduation_date ~ '^[0-9]{4}$'),
   technology_focus text not null check (technology_focus in (
     'Aerospace', 'Bioengineering', 'Communication, Networking and Broadcasting',
     'Components, Circuits, Devices and Systems',
@@ -126,6 +126,19 @@ alter table public.ieee_member_registrations
   check (
     facebook_url is null or facebook_url ~* '^https?://(www[.]|m[.]|web[.])?(facebook|fb)[.]com/.+'
   );
+
+-- Replace the previous YYYY-MM validation with year-only validation.
+alter table public.ieee_member_registrations
+  drop constraint if exists ieee_member_registrations_graduation_date_check,
+  drop constraint if exists graduation_date_check;
+
+update public.ieee_member_registrations
+set graduation_date = left(graduation_date, 4)
+where graduation_date ~ '^[0-9]{4}-(0[1-9]|1[0-2])$';
+
+alter table public.ieee_member_registrations
+  add constraint ieee_member_registrations_graduation_date_check
+  check (graduation_date ~ '^[0-9]{4}$');
 
 alter table public.ieee_member_registrations
   drop constraint if exists ieee_member_registrations_technology_focus_check;

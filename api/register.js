@@ -117,7 +117,7 @@ function getRegistration(body) {
     values.school_country.length > 0 && values.school_country.length <= 100 &&
     values.school_city.length > 0 && values.school_city.length <= 100 &&
     values.school_name.length > 0 && values.school_name.length <= 200 &&
-    /^\d{4}-(0[1-9]|1[0-2])$/.test(values.graduation_date) &&
+    /^\d{4}$/.test(values.graduation_date) &&
     technologyFocuses.has(values.technology_focus) &&
     ["Yes", "No"].includes(values.undergraduate_program_accredited) &&
     /^\d{6,12}$/.test(values.ulab_id) &&

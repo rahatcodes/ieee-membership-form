@@ -250,10 +250,10 @@ input:focus,select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 
                   class="msg">Enter your
                   school name.</div></div>
               <div class="f"><label for="graduationDate">Graduation
-                  date*</label><input
+                  year*</label><input
                   id="graduationDate" type="text" inputmode="numeric"
-                  placeholder="YYYY-MM"><div class="msg">Enter your expected
-                  graduation month as YYYY-MM.</div></div>
+                  placeholder="YYYY"><div class="msg">Enter your expected
+                  graduation year.</div></div>
               <div class="f full"><label for="technologyFocus">Current
                   Technology Focus*</label><select id="technologyFocus">
                   <option value>Choose Current Technology Focus</option>
@@ -406,7 +406,7 @@ $("f2").addEventListener("submit", e => {
     check("schoolCountry", v("schoolCountry").length > 0),
     check("schoolCity", v("schoolCity").length > 0),
     check("schoolName", v("schoolName").length > 0),
-    check("graduationDate", /^\d{4}-(0[1-9]|1[0-2])$/.test(v("graduationDate"))),
+    check("graduationDate", /^\d{4}$/.test(v("graduationDate"))),
     check("technologyFocus", v("technologyFocus") !== ""),
     check("undergradAccredited", v("undergradAccredited") !== ""),
     check("uid", /^\d{6,12}$/.test(v("uid"))),
